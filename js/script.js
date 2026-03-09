@@ -53,7 +53,15 @@ async function loadEvents() {
     return;
   }
 
-  const eventFiles = ['events/thcon2026.json', 'events/hackathon2026.json'];
+  const eventFiles = [
+    'events/business-starter-days-2026.json',
+    'events/enac-hackathon-2026.json',
+    'events/vivatech-2026.json',
+    'events/thcon2026.json',
+    'events/hackathon2026.json'
+  ];
+
+  const loadedEvents = [];
 
   for (const file of eventFiles) {
     try {
@@ -63,17 +71,27 @@ async function loadEvents() {
       }
 
       const event = await response.json();
-      const card = createEventCard(event);
-
-      if (event.category === 'upcoming') {
-        upcomingContainer.appendChild(card);
-      } else {
-        pastContainer.appendChild(card);
-      }
+      loadedEvents.push(event);
     } catch {
       // Keep static cards visible when JSON files are unavailable.
     }
   }
+
+  if (loadedEvents.length === 0) {
+    return;
+  }
+
+  // Replace static fallback cards once live event data is available.
+  upcomingContainer.innerHTML = '';
+  pastContainer.innerHTML = '';
+
+  loadedEvents
+    .filter((event) => event.category === 'upcoming')
+    .forEach((event) => upcomingContainer.appendChild(createEventCard(event)));
+
+  loadedEvents
+    .filter((event) => event.category !== 'upcoming')
+    .forEach((event) => pastContainer.appendChild(createEventCard(event)));
 }
 
 loadEvents();
