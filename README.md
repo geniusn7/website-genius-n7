@@ -7,6 +7,8 @@ Site statique de l'association etudiante Genius N7 (ENSEEIHT - Toulouse INP), co
 ```text
 .
 |-- index.html
+|-- venture.html
+|-- team.html
 |-- css/
 |   `-- style.css
 |-- js/
@@ -17,6 +19,9 @@ Site statique de l'association etudiante Genius N7 (ENSEEIHT - Toulouse INP), co
 |   |   `-- projects/
 |   `-- logos/
 `-- events/
+		|-- business-starter-days-2026.json
+		|-- enac-hackathon-2026.json
+		|-- vivatech-2026.json
 		|-- thcon2026.json
 		`-- hackathon2026.json
 ```
@@ -25,10 +30,12 @@ Site statique de l'association etudiante Genius N7 (ENSEEIHT - Toulouse INP), co
 
 - Accueil
 - A propos
+- Venture
+- Equipe
 - Projets
 - Evenements
-- Explorer
-- Communaute
+- Initiatives
+- News
 - Contact
 
 ## Ajouter un evenement

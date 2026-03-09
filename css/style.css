@@ -469,7 +469,7 @@ li + li {
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 980px) {
   .main-nav {
     position: absolute;
     top: calc(100% + 6px);
@@ -492,6 +492,9 @@ li + li {
   .nav-toggle {
     display: inline-flex;
   }
+}
+
+@media (max-width: 700px) {
 
   .about-grid,
   .card-grid,
