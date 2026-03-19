@@ -54,11 +54,11 @@ async function loadEvents() {
   }
 
   const eventFiles = [
-    'events/business-starter-days-2026.json',
     'events/enac-hackathon-2026.json',
     'events/vivatech-2026.json',
-    'events/thcon2026.json',
-    'events/hackathon2026.json'
+    'events/hackathon2026.json',
+    'events/rencontres-entrepreneuriat-n7-2024.json',
+    'events/rencontres-entrepreneuriat-n7-2025.json'
   ];
 
   const loadedEvents = [];
